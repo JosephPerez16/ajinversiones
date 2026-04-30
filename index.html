@@ -3,176 +3,420 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>AJ Inversiones</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="img/Inversiones.jpeg" type="image/png">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <meta name="description" content="AJ Inversiones ofrece préstamos personales, hipotecarios, vehiculares y traspasos con atención personalizada.">
+  <title>AJ Inversiones | Soluciones Financieras</title>
+  <link rel="icon" href="img/Inversiones.jpeg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- HEADER -->
-<header class="header">
-
-  <div class="container nav">
-
-    <div class="logo-box">
-      <img src="img/Inversiones.jpeg" alt="AJ Inversiones">
-      <span>AJ Inversiones</span>
-    </div>
-
-    <nav class="menu" id="menu">
-      <a href="#inicio">Inicio</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#beneficios">Beneficios</a>
-      <a href="#contacto">Contacto</a>
-      <a href="#contacto" class="btn-main">Solicitar</a>
-    </nav>
-
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-  </div>
-
-</header>
-
-<!-- HERO -->
-<section class="hero" id="inicio">
-
-  <div class="container hero-grid">
-
-    <div class="hero-text">
-
-      <span class="badge">Finanzas Confiables</span>
-
-      <h1>Impulsamos tu crecimiento financiero</h1>
-
-      <p>
-        Préstamos personales rápidos, transparentes y seguros.
-        Sin procesos complicados.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#contacto" class="btn-main">Solicitar Ahora</a>
-        <a href="#servicios" class="btn-outline">Ver Servicios</a>
-      </div>
-
-      <div class="hero-stats">
-
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#inicio" class="logo-box" aria-label="AJ Inversiones">
+        <img src="img/Inversiones.jpeg" alt="AJ Inversiones">
         <div>
-          <strong>+100</strong>
-          <span>Clientes</span>
+          <span>AJ Inversiones</span>
+          <small>Soluciones financieras</small>
+        </div>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#pasos">Proceso</a>
+        <a href="#tipos">Tipos</a>
+        <a href="#calificacion">Calificación</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#calificacion" class="btn-main">Solicitar</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-bg"></div>
+      <div class="container hero-grid">
+        <div class="hero-text reveal">
+          <span class="badge">Finanzas confiables y atención personalizada</span>
+          <h1>Impulsamos tu crecimiento financiero con préstamos simples y seguros</h1>
+          <p>Solicita tu préstamo de forma rápida, organizada y transparente. Recibe orientación directa por WhatsApp y evalúa tu solicitud en minutos.</p>
+          <div class="hero-buttons">
+            <a href="#calificacion" class="btn-main">Calificar ahora</a>
+            <a href="#servicios" class="btn-outline">Ver servicios</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <strong>+100</strong>
+              <span>Clientes orientados</span>
+            </div>
+            <div>
+              <strong>40%</strong>
+              <span>Tasa máxima elegible</span>
+            </div>
+            <div>
+              <strong>24h</strong>
+              <span>Respuesta estimada</span>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <strong>15%</strong>
-          <span>Interés</span>
+        <div class="hero-card reveal">
+          <div class="glass-card">
+            <div class="card-top">
+              <span>Precalificación</span>
+              <img src="img/Inversiones.jpeg" alt="AJ Inversiones" class="card-logo">
+            </div>
+            <h2>Solicita sin complicaciones</h2>
+            <p>Completa tus datos, elige monto, tasa, plazo y motivo. Al enviar, toda la información se organizará automáticamente para WhatsApp.</p>
+            <div class="mini-list">
+              <span>✓ Datos personales</span>
+              <span>✓ Datos laborales</span>
+              <span>✓ Monto y tasa</span>
+              <span>✓ Envío directo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div>Respuesta rápida</div>
+        <div>Condiciones claras</div>
+        <div>Asesoría directa</div>
+        <div>Datos organizados</div>
+      </div>
+    </section>
+
+    <section class="services section" id="servicios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Servicios</span>
+          <h2>Soluciones diseñadas para tu tranquilidad financiera</h2>
+          <p>AJ Inversiones te ayuda con préstamos personales, hipotecarios, vehiculares y traspasos, manteniendo un proceso claro, cómodo y directo.</p>
         </div>
 
-        <div>
-          <strong>24h</strong>
-          <span>Aprobación</span>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="icon">💳</div>
+            <h3>Préstamos personales</h3>
+            <p>Opciones flexibles para gastos, emergencias, compromisos o proyectos personales.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon">🏠</div>
+            <h3>Préstamos hipotecarios</h3>
+            <p>Orientación para solicitudes relacionadas con vivienda, garantía o inversión inmobiliaria.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon">🚗</div>
+            <h3>Préstamos vehiculares</h3>
+            <p>Alternativas para compra, inicial, mejora o financiamiento relacionado con vehículos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="loan-types section" id="tipos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Tipos de préstamos</span>
+          <h2>Elige la opción que mejor se adapta a tu necesidad</h2>
+          <p>Cada solicitud se organiza según el tipo de préstamo para ofrecer una evaluación más clara y personalizada.</p>
         </div>
 
+        <div class="loan-type-grid">
+          <article class="loan-type-card reveal">
+            <div class="icon">💳</div>
+            <h3>Personal</h3>
+            <p>Para emergencias, compromisos, estudios, salud, hogar o necesidades inmediatas.</p>
+          </article>
+          <article class="loan-type-card reveal">
+            <div class="icon">🏠</div>
+            <h3>Hipotecario</h3>
+            <p>Para solicitudes relacionadas con vivienda, garantía, inversión o mejora inmobiliaria.</p>
+          </article>
+          <article class="loan-type-card reveal">
+            <div class="icon">🚗</div>
+            <h3>Vehicular</h3>
+            <p>Para compra de vehículo, inicial, reparación o financiamiento relacionado.</p>
+          </article>
+          <article class="loan-type-card reveal">
+            <div class="icon">🔄</div>
+            <h3>Traspasos</h3>
+            <p>Para reorganizar, transferir o consolidar compromisos financieros existentes.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-    </div>
+    <section class="steps section" id="pasos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Proceso</span>
+          <h2>Solicita en tres pasos</h2>
+          <p>Un flujo claro para que el cliente sepa exactamente qué hacer.</p>
+        </div>
 
-  </div>
-
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="servicios">
-
-  <div class="container">
-
-    <h2>Servicios</h2>
-    <p class="section-desc">
-      Soluciones diseñadas para tu tranquilidad financiera.
-    </p>
-
-    <div class="cards">
-
-      <div class="card">
-        💳
-        <h3>Préstamos Personales</h3>
-        <p>Flexibles y adaptados a ti</p>
+        <div class="steps-grid">
+          <div class="step reveal">
+            <span>01</span>
+            <h3>Completa tus datos</h3>
+            <p>Agrega nombre, ingresos, lugar de trabajo, tipo de préstamo, monto, tasa, plazo y motivo.</p>
+          </div>
+          <div class="step reveal">
+            <span>02</span>
+            <h3>Revisa tu estimado</h3>
+            <p>El sistema calcula el interés y el total estimado según la tasa seleccionada.</p>
+          </div>
+          <div class="step reveal">
+            <span>03</span>
+            <h3>Envía por WhatsApp</h3>
+            <p>La solicitud llega organizada y lista para evaluación personalizada.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        📊
-        <h3>Gestión Financiera</h3>
-        <p>Control total de tus pagos</p>
+    <section class="qualification section" id="calificacion">
+      <div class="container qualify-grid">
+        <div class="qualify-info reveal">
+          <span class="eyebrow">Calificación</span>
+          <h2>Evalúa tu solicitud de préstamo</h2>
+          <p>Completa el formulario y al enviarlo serás redirigido a WhatsApp con todos los datos suministrados.</p>
+          <div class="notice-box">
+            <strong>Importante:</strong>
+            <p>Esta precalificación no representa aprobación automática. AJ Inversiones revisará la información y podrá solicitar documentación adicional.</p>
+          </div>
+          <div class="requirements">
+            <h3>Datos que se tomarán en cuenta</h3>
+            <ul>
+              <li>Ingreso mensual</li>
+              <li>Lugar y tiempo laborando</li>
+              <li>Tipo de préstamo</li>
+              <li>Monto solicitado</li>
+              <li>Tasa y plazo elegido</li>
+              <li>Motivo del préstamo</li>
+            </ul>
+          </div>
+        </div>
+
+        <form class="loan-form reveal" id="loanForm">
+          <div class="form-title">
+            <h3>Formulario de solicitud</h3>
+            <p>Todos los campos marcados son necesarios para organizar tu solicitud.</p>
+          </div>
+
+          <div class="form-row">
+            <label for="fullName">Nombre y apellido</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Ej. José Pérez" required>
+          </div>
+
+          <div class="form-row two">
+            <div>
+              <label for="phone">Teléfono</label>
+              <input type="tel" id="phone" name="phone" placeholder="Ej. 829-000-0000" required>
+            </div>
+            <div>
+              <label for="city">Ciudad o sector</label>
+              <input type="text" id="city" name="city" placeholder="Ej. Santo Domingo Norte" required>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div>
+              <label for="income">Ingreso mensual RD$</label>
+              <input type="number" id="income" name="income" min="0" placeholder="Ej. 35000" required>
+            </div>
+            <div>
+              <label for="workplace">Dónde trabaja</label>
+              <input type="text" id="workplace" name="workplace" placeholder="Empresa o negocio" required>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div>
+              <label for="jobTime">Tiempo laborando</label>
+              <select id="jobTime" name="jobTime" required>
+                <option value="">Seleccionar</option>
+                <option>Menos de 3 meses</option>
+                <option>3 a 6 meses</option>
+                <option>6 meses a 1 año</option>
+                <option>1 a 3 años</option>
+                <option>Más de 3 años</option>
+              </select>
+            </div>
+            <div>
+              <label for="employmentType">Tipo de ingreso</label>
+              <select id="employmentType" name="employmentType" required>
+                <option value="">Seleccionar</option>
+                <option>Empleado privado</option>
+                <option>Empleado público</option>
+                <option>Negocio propio</option>
+                <option>Independiente</option>
+                <option>Otro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="loanType">Tipo de préstamo</label>
+            <select id="loanType" name="loanType" required>
+              <option value="">Seleccionar tipo de préstamo</option>
+              <option>Préstamo personal</option>
+              <option>Préstamo hipotecario</option>
+              <option>Préstamo vehicular</option>
+              <option>Traspaso</option>
+            </select>
+          </div>
+
+          <div class="form-row two">
+            <div>
+              <label for="amount">Monto solicitado RD$</label>
+              <input type="number" id="amount" name="amount" min="1000" placeholder="Ej. 10000" required>
+            </div>
+            <div>
+              <label for="rate">Tasa seleccionada</label>
+              <select id="rate" name="rate" required>
+                <option value="">Seleccionar tasa</option>
+                <option value="40">40%</option>
+                <option value="35">35%</option>
+                <option value="30">30%</option>
+                <option value="25">25%</option>
+                <option value="20">20%</option>
+                <option value="15">15%</option>
+                <option value="10">10%</option>
+                <option value="5">5%</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row two">
+            <div>
+              <label for="term">Plazo deseado</label>
+              <select id="term" name="term" required>
+                <option value="">Seleccionar plazo</option>
+                <option value="1">1 mes</option>
+                <option value="2">2 meses</option>
+                <option value="3">3 meses</option>
+                <option value="4">4 meses</option>
+                <option value="5">5 meses</option>
+                <option value="6">6 meses</option>
+                <option value="12">12 meses</option>
+              </select>
+            </div>
+            <div>
+              <label for="paymentDay">Día preferido de pago</label>
+              <select id="paymentDay" name="paymentDay" required>
+                <option value="">Seleccionar</option>
+                <option>Semanal</option>
+                <option>Quincenal</option>
+                <option>Mensual</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="purpose">Motivo del préstamo</label>
+            <select id="purpose" name="purpose" required>
+              <option value="">Seleccionar motivo</option>
+              <option>Emergencia personal</option>
+              <option>Salud</option>
+              <option>Negocio</option>
+              <option>Pago de deuda</option>
+              <option>Educación</option>
+              <option>Hogar</option>
+              <option>Otro</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="details">Detalles adicionales</label>
+            <textarea id="details" name="details" rows="4" placeholder="Agrega cualquier información importante"></textarea>
+          </div>
+
+          <div class="summary-box" id="summaryBox">
+            <div>
+              <span>Interés estimado</span>
+              <strong id="interestResult">RD$0.00</strong>
+            </div>
+            <div>
+              <span>Total estimado</span>
+              <strong id="totalResult">RD$0.00</strong>
+            </div>
+            <div>
+              <span>Cuota aproximada</span>
+              <strong id="feeResult">RD$0.00</strong>
+            </div>
+          </div>
+
+          <label class="check-row">
+            <input type="checkbox" id="acceptTerms" required>
+            <span>Acepto enviar mi información por WhatsApp para fines de evaluación.</span>
+          </label>
+
+          <button type="submit" class="btn-main form-btn">Enviar solicitud por WhatsApp</button>
+        </form>
       </div>
+    </section>
 
-      <div class="card">
-        🔐
-        <h3>Protección de Datos</h3>
-        <p>Información segura</p>
+    <section class="benefits section" id="beneficios">
+      <div class="container benefits-grid">
+        <div class="reveal">
+          <span class="eyebrow">Beneficios</span>
+          <h2>¿Por qué elegir AJ Inversiones?</h2>
+          <ul>
+            <li>✔️ Respuesta rápida y trato directo</li>
+            <li>✔️ Condiciones claras desde el inicio</li>
+            <li>✔️ Proceso sencillo y organizado</li>
+            <li>✔️ Comunicación directa por WhatsApp</li>
+            <li>✔️ Evaluación personalizada según tu perfil</li>
+          </ul>
+        </div>
+        <div class="benefit-box reveal">
+          <h3>Confianza</h3>
+          <p>Un proceso más claro genera mejores decisiones financieras.</p>
+          <a href="#calificacion" class="btn-main">Iniciar solicitud</a>
+        </div>
       </div>
+    </section>
 
+    <section class="legal section">
+      <div class="container legal-card reveal">
+        <h2>Aviso importante</h2>
+        <p>Los cálculos mostrados son estimados y pueden variar según la evaluación final, acuerdos, documentación y condiciones aplicables. El envío del formulario no garantiza aprobación inmediata del préstamo.</p>
+      </div>
+    </section>
+
+    <section class="contact section" id="contacto">
+      <div class="container contact-card reveal">
+        <span class="eyebrow">Contacto</span>
+        <h2>Habla con AJ Inversiones</h2>
+        <p>Comunícate directamente para recibir orientación sobre tu solicitud.</p>
+        <div class="contact-items">
+          <a href="tel:8296677778">📞 829-667-7778</a>
+          <a href="mailto:ajinversiones@gmail.com">📧 ajinversiones@gmail.com</a>
+          <a href="https://wa.me/18296677778" target="_blank" rel="noopener">💬 WhatsApp directo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> AJ Inversiones. Todos los derechos reservados.</p>
+      <a href="#inicio">Volver arriba</a>
     </div>
+  </footer>
 
-  </div>
-
-</section>
-
-<!-- BENEFITS -->
-<section class="benefits" id="beneficios">
-
-  <div class="container benefits-grid">
-
-    <div>
-      <h2>¿Por qué elegir AJ Inversiones?</h2>
-
-      <ul>
-        <li>✔️ Respuesta rápida</li>
-        <li>✔️ Condiciones claras</li>
-        <li>✔️ Sin cargos ocultos</li>
-        <li>✔️ Soporte personalizado</li>
-      </ul>
-    </div>
-
-    <div class="benefit-box">
-      <h3>Confianza</h3>
-      <p>Respaldados por nuestros clientes</p>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contacto">
-
-  <div class="container">
-
-    <h2>Contáctanos</h2>
-
-    <p>📞 829-667-7778</p>
-    <p>📧 ajinversiones@gmail.com</p>
-
-    <a 
-      href="https://wa.me/18296677778" 
-      target="_blank"
-      class="btn-main"
-    >
-      Escríbenos por WhatsApp
-    </a>
-
-  </div>
-
-</section>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
