@@ -24,6 +24,7 @@ const ownerModal = document.getElementById("ownerModal");
 const ownerLoginForm = document.getElementById("ownerLoginForm");
 const loginError = document.getElementById("loginError");
 const ownerPanel = document.getElementById("ownerPanel");
+const isOwnerPage = document.body?.dataset?.page === "owner";
 const logoutOwner = document.getElementById("logoutOwner");
 const clientsTable = document.getElementById("clientsTable");
 const ownerSearch = document.getElementById("ownerSearch");
@@ -35,7 +36,7 @@ const metricLate = document.getElementById("metricLate");
 
 const whatsappNumber = "18296677778";
 const fixedRate = 40;
-const ownerCredentials = { user: "admin", password: "AJ2026" };
+const ownerCredentials = { user: "YohanO", password: "AJ2026" };
 const clientsKey = "aj_inversiones_clientes";
 const sessionKey = "aj_owner_session";
 let currentStep = 0;
@@ -231,17 +232,26 @@ if(loanForm){
 
 const openModal = () => {
   if(ownerModal){
+    if(hamburger && menu){
+      hamburger.classList.remove("active");
+      menu.classList.remove("active");
+    }
+    document.body.classList.add("no-scroll","owner-modal-open");
     ownerModal.classList.add("active");
     ownerModal.setAttribute("aria-hidden","false");
-    document.body.classList.add("no-scroll");
+    setTimeout(()=>{
+      const input = document.getElementById("ownerUser");
+      if(input) input.focus();
+    },120);
   }
 };
 
 const closeModal = () => {
   if(ownerModal){
+    if(document.activeElement) document.activeElement.blur();
     ownerModal.classList.remove("active");
     ownerModal.setAttribute("aria-hidden","true");
-    document.body.classList.remove("no-scroll");
+    document.body.classList.remove("no-scroll","owner-modal-open");
   }
 };
 
@@ -250,6 +260,7 @@ if(openOwnerLogin){
     if(hamburger && menu){
       hamburger.classList.remove("active");
       menu.classList.remove("active");
+      document.body.classList.remove("no-scroll");
     }
     openModal();
   });
@@ -268,7 +279,7 @@ if(ownerLoginForm){
       loginError.textContent = "";
       ownerLoginForm.reset();
       closeModal();
-      showOwnerPanel();
+      window.location.href = "dueno.html";
     }else{
       loginError.textContent = "Credenciales incorrectas.";
     }
@@ -294,7 +305,11 @@ const hideOwnerPanel = () => {
 if(logoutOwner){
   logoutOwner.addEventListener("click",()=>{
     localStorage.removeItem(sessionKey);
-    hideOwnerPanel();
+    if(isOwnerPage){
+      window.location.href = "index.html";
+    }else{
+      hideOwnerPanel();
+    }
   });
 }
 
@@ -339,13 +354,13 @@ const renderClients = () => {
 
   clientsTable.innerHTML = clients.map(client=>`
     <tr>
-      <td><strong>${client.fullName}</strong><small>${client.phone}</small><small>${client.city}</small></td>
-      <td><strong>${formatMoney(client.amount)}</strong><small>Total: ${formatMoney(client.total)}</small><small>${client.loanType}</small></td>
-      <td><strong>${client.paymentFrequency}</strong><small>${formatMoney(client.fee)}</small><small>${client.paymentDay}</small></td>
-      <td><select class="status-select" data-id="${client.id}"><option ${client.status === "Pendiente" ? "selected" : ""}>Pendiente</option><option ${client.status === "Aprobado" ? "selected" : ""}>Aprobado</option><option ${client.status === "Activo" ? "selected" : ""}>Activo</option><option ${client.status === "Rechazado" ? "selected" : ""}>Rechazado</option><option ${client.status === "Finalizado" ? "selected" : ""}>Finalizado</option></select></td>
-      <td><input class="late-input" type="number" min="0" value="${client.lateDays}" data-id="${client.id}"></td>
-      <td>${client.lastPayment}<small>${new Date(client.createdAt).toLocaleDateString("es-DO")}</small></td>
-      <td><div class="action-group"><button class="table-btn gold" data-action="approve" data-id="${client.id}">Aprobar</button><button class="table-btn" data-action="paid" data-id="${client.id}">Pago</button><button class="table-btn red" data-action="delete" data-id="${client.id}">Eliminar</button></div></td>
+      <td data-label="Cliente"><strong>${client.fullName}</strong><small>${client.phone}</small><small>${client.city}</small></td>
+      <td data-label="Préstamo"><strong>${formatMoney(client.amount)}</strong><small>Total: ${formatMoney(client.total)}</small><small>${client.loanType}</small></td>
+      <td data-label="Pago"><strong>${client.paymentFrequency}</strong><small>${formatMoney(client.fee)}</small><small>${client.paymentDay}</small></td>
+      <td data-label="Estado"><select class="status-select" data-id="${client.id}"><option ${client.status === "Pendiente" ? "selected" : ""}>Pendiente</option><option ${client.status === "Aprobado" ? "selected" : ""}>Aprobado</option><option ${client.status === "Activo" ? "selected" : ""}>Activo</option><option ${client.status === "Rechazado" ? "selected" : ""}>Rechazado</option><option ${client.status === "Finalizado" ? "selected" : ""}>Finalizado</option></select></td>
+      <td data-label="Atraso"><input class="late-input" type="number" min="0" value="${client.lateDays}" data-id="${client.id}"></td>
+      <td data-label="Último pago">${client.lastPayment}<small>${new Date(client.createdAt).toLocaleDateString("es-DO")}</small></td>
+      <td data-label="Acciones"><div class="action-group"><button class="table-btn gold" data-action="approve" data-id="${client.id}">Aprobar</button><button class="table-btn" data-action="paid" data-id="${client.id}">Pago</button><button class="table-btn red" data-action="delete" data-id="${client.id}">Eliminar</button></div></td>
     </tr>
   `).join("");
 };
@@ -398,6 +413,12 @@ const observer = new IntersectionObserver(entries=>{
 reveals.forEach(item=>observer.observe(item));
 
 calculateLoan();
-updateSteps();
+if(steps.length) updateSteps();
 renderClients();
-if(localStorage.getItem(sessionKey) === "active") showOwnerPanel();
+if(isOwnerPage){
+  if(localStorage.getItem(sessionKey) !== "active"){
+    window.location.href = "index.html";
+  }else{
+    showOwnerPanel();
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Panel privado de AJ Inversiones para control de solicitudes y préstamos.">
+  <title>Panel del Dueño | AJ Inversiones</title>
+  <link rel="icon" href="img/Inversiones.jpeg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="owner">
+  <header class="owner-dashboard-header">
+    <div class="container owner-dashboard-nav">
+      <a href="index.html" class="logo-box" aria-label="AJ Inversiones">
+        <img src="img/Inversiones.jpeg" alt="AJ Inversiones">
+        <div>
+          <span>AJ Inversiones</span>
+          <small>Panel administrativo</small>
+        </div>
+      </a>
+      <button class="btn-outline" id="logoutOwner" type="button">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="owner-dashboard-main">
+    <section class="owner-panel active" id="ownerPanel" aria-hidden="false">
+      <div class="owner-shell">
+        <div class="owner-head">
+          <div>
+            <span>Panel del dueño</span>
+            <h2>Control de solicitudes y préstamos</h2>
+            <p>Administra clientes registrados, estados de aprobación, pagos y atrasos.</p>
+          </div>
+        </div>
+        <div class="owner-metrics">
+          <div><span>Total clientes</span><strong id="metricClients">0</strong></div>
+          <div><span>Aprobados</span><strong id="metricApproved">0</strong></div>
+          <div><span>Activos</span><strong id="metricActive">0</strong></div>
+          <div><span>En atraso</span><strong id="metricLate">0</strong></div>
+        </div>
+        <div class="owner-tools">
+          <input type="search" id="ownerSearch" placeholder="Buscar cliente, teléfono, tipo de préstamo o estado">
+          <button class="btn-main" id="exportData" type="button">Exportar datos</button>
+        </div>
+        <div class="owner-table-wrap">
+          <table class="owner-table">
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>Préstamo</th>
+                <th>Pago</th>
+                <th>Estado</th>
+                <th>Atraso</th>
+                <th>Último pago</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="clientsTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
